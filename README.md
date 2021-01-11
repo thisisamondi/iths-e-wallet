@@ -12,7 +12,8 @@ I PDF:en hittar du också ett förslag på vilka komponenter som bör finnas med
 
 Använd Vue Router för att konfigurera era vyer
 
-Placera arrayen med alla kort i root-komponenten på samma sätt som Mini Library.
+// Placera arrayen med alla kort i root-komponenten på samma sätt som Mini Library.
+Placera arrayen med alla kort i ett globalt state vuex.
 
 ###### Förslag på datamodell
 
