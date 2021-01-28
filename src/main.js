@@ -5,6 +5,11 @@ import router from "./router";
 Vue.config.productionTip = false;
 
 new Vue({
+  data() {
+    return {
+      cardStack: []
+    };
+  },
   router,
   render: h => h(App)
 }).$mount("#app");
