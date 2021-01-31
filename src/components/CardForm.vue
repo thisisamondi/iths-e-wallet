@@ -84,7 +84,7 @@
     <label for="vendor" class="col-2">Vendor</label> 
     <input
       list="vendor"
-      v-model="card.vendor"
+      v-model="card.cardVendor"
       optional-value="1"
       placeholder=""
       class="col-2"
@@ -108,6 +108,7 @@
 <script>
 export default {
   name: "CardForm",
+
   props: {
     card: {
       type: Object
@@ -118,17 +119,19 @@ export default {
     onSubmit(e) {
       const card = {
         id: Date.now(),
-        holder: this.cardName,
-        vendor: this.vendor,
-        number: this.cardNumber,
-        validMonth: this.cardMonth,
-        validYear: this.cardYear
+        cardName: this.card.cardName,
+        cardVendor: this.card.cardVendor,
+        cardNumber: this.card.cardNumber,
+        cardMonth: this.card.cardMonth,
+        cardYear: this.card.cardYear
       };
 
-      this.$root.cardStack.push(card);
+      this.$root.cardArray.push(card);
+      this.$router.push("/");
       e.preventDefault();
     }
-  }
+  },
+
 };
 </script>
 

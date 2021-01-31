@@ -1,16 +1,22 @@
 <template>
   <div>
-    <CardStack v-bind:card="card"/>
+  <Top/>
+  <CardStack class="card-stack" v-bind:cardarray="getcardStack"/>
+
   </div>
 </template>
 
 <script>
 import CardStack from "../components/CardStack.vue";
+import Top from "@/components/Top.vue"
+
 
 export default {
   components: { 
-    CardStack 
+    CardStack,
+    Top 
     },
+
     data () {
       return {
         card: {
@@ -18,13 +24,28 @@ export default {
           cardName:"",
           cardMonth:"",
           cardYear:"",
-          vendor: "",
+          cardVendor: "",
           }
       }
-    }
+    },
+
+    computed: {
+      getcardStack() {
+        return this.$root.cardArray;
+      }
+    },
+    
+   
 }
 </script>
 
 <style scoped>
+
+.card-stack {
+  margin: 2rem 0 12rem;
+  display: grid;
+  grid-auto-rows: 4rem;
+}
+
 
 </style>

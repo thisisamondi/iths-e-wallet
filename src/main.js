@@ -7,7 +7,17 @@ Vue.config.productionTip = false;
 new Vue({
   data() {
     return {
-      cardStack: []
+      activeCardIndex: 0,
+      cardArray: [
+       {
+          id: "432984728397",
+          cardName: "The name",
+          cardVendor: "bitcoin",
+          cardNumber: "XXXXYYYYZZZZFFFF",
+          cardMonth: "12",
+          cardYear: "22"
+        },
+      ]
     };
   },
   router,

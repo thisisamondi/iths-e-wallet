@@ -1,33 +1,39 @@
 <template>
   <div>
+    <Top/>
     <Card :card="card"></Card>
     <CardForm :card="card"></CardForm>
-    <ul>
-      <li v-for="card in cardStack" :key="card.id">{{ card.number }}</li>
-    </ul>
+
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
 import CardForm from "@/components/CardForm.vue";
+import Top from "@/components/Top.vue";
 
 export default {
-  components: { Card, CardForm },
+  components: { 
+    Card, 
+    CardForm, 
+    Top,
+    },
+  
   data() {
     return {
       card: {
         cardNumber: "",
         cardName: "",
         cardMonth: "",
-        cardYear: ""
+        cardYear: "",
+        cardVendor: "",
       }
     };
   },
 
   computed: {
     cardStack() {
-      return this.$root.$data.cardStack;
+      return this.$root.$data.cardArray;
     }
   }
 };

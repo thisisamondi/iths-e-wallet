@@ -1,12 +1,12 @@
 <template>
   <div class="AddCard">
-    <h1>Add Card</h1>
+  
 
     <article class="card evil">
       <header>
-        <img v-if="card.vendor === 'Bitcoin'" src="@/assets/chip-dark.svg" alt="chip dark"/>
+        <img v-if="card.cardVendor === 'Bitcoin'" src="@/assets/chip-dark.svg" alt="chip dark"/>
         <img v-else src="@/assets/chip-light.svg" alt="chip light">
-        <img v-if="card.vendor === 'Evil Corp'" src="@/assets/vendor-evil.svg"/>
+        <img v-if="card.cardVendor === 'Evil Corp'" src="@/assets/vendor-evil.svg"/>
         <img v-else if src="" alt=""/>
       </header>
 
