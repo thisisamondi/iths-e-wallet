@@ -1,20 +1,24 @@
 <template>
   <div>
   <Top/>
+  {{this.$root.activeCardIndex}}
+  <Card :card="getcardStack[getCardIndex]" />
   <CardStack class="card-stack" v-bind:cardarray="getcardStack"/>
-
+  <button><router-link to="/AddCard">Add Card</router-link></button>
   </div>
 </template>
 
 <script>
 import CardStack from "../components/CardStack.vue";
 import Top from "@/components/Top.vue"
+import Card from '../components/Card.vue';
 
 
 export default {
   components: { 
     CardStack,
-    Top 
+    Top,
+    Card 
     },
 
     data () {
@@ -30,6 +34,9 @@ export default {
     },
 
     computed: {
+      getCardIndex(){
+        return this.$root.activeCardIndex;
+      },
       getcardStack() {
         return this.$root.cardArray;
       }

@@ -1,14 +1,16 @@
 <template>
-<section>
-<div v-for="card in cardarray" v-bind:key="card.id">
-    <Card v-bind:card="card"/>
-</div>
-</section>
+    <section>
+        <div @click="setCardIndex(index)" class="cardContainer" v-for="(card, index) in cardarray" v-bind:key="card.id">
+            <Card v-bind:card="card"/>
+            <button @click="removeCard(index)" class="removeCard taBort">X</button>
+        </div>
+    </section>
 </template> 
 
 
 <script>
 import Card from "@/components/Card.vue";
+
 export default {
   name: "cardStack",
   props: {
@@ -16,14 +18,48 @@ export default {
           type: Array,
       },
   },
-  components: {
+
+    components: {
       Card,
-  },
+    },
+
+    methods: {
+        setCardIndex(index) {
+            this.$root.activeCardIndex=index;
+        },
+        removeCard(index) {
+            this.$root.cardArray.splice(index, 1);
+        },
+    }
 };
 </script>
 
 
 <style scoped>
+.removeCard{
+    margin-top: 90px; 
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(168, 46, 46);
+    border: .125rem solid rgb(119, 56, 56);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: .5rem;
+    margin: 2rem 0;
+
+}
+.cardContainer {
+    position: relative;
+
+}
+.taBort{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 main {
   display: block;
 }
@@ -37,7 +73,7 @@ main {
     font-family: PT Mono,monospace;
     padding: 1rem;
     height: 100vh;
-    max-width: 24rem;
+    max-width: 26rem;
     margin: 0 auto;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -206,12 +242,16 @@ a.cta {
     box-sizing: border-box;
     border-radius: .5rem;
     margin: 2rem 0;
-    
 }
+
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
     text-decoration: underline;
+}
+.evil {
+    background: linear-gradient(248.3deg,rgba(0,0,0,.16),transparent),#f33355;
+    color: #fff;
 }
 a.cta :hover {
   background-color: #000;

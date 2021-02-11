@@ -27,7 +27,7 @@ export default {
         cardMonth: "",
         cardYear: "",
         cardVendor: "",
-      }
+      },
     };
   },
 
@@ -39,4 +39,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

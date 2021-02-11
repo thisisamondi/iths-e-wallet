@@ -57,8 +57,6 @@
 
 <!-- YEAR!!!!-->
 
-
-
     <input
       list="year"
       v-model="card.cardYear"
