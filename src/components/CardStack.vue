@@ -39,16 +39,20 @@ export default {
 .removeCard{
     margin-top: 90px; 
     font-size: 1.2rem;
-    text-transform: uppercase;
     font-weight: 700;
     text-decoration: none;
     color: rgb(168, 46, 46);
     border: .125rem solid rgb(119, 56, 56);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-radius: .5rem;
-    margin: 2rem 0;
+    border-radius: .9rem;
+    margin: -1rem;
+    height: 1.9rem;
 
+}
+.removeCard:hover{
+    cursor: pointer;
+    background: rgb(206, 206, 206);
 }
 .cardContainer {
     position: relative;

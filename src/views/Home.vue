@@ -1,10 +1,9 @@
 <template>
   <div>
   <Top/>
-  {{this.$root.activeCardIndex}}
   <Card :card="getcardStack[getCardIndex]" />
   <CardStack class="card-stack" v-bind:cardarray="getcardStack"/>
-  <button><router-link to="/AddCard">Add Card</router-link></button>
+  <button><router-link to="/AddCard" class="routerlink">Add New Card</router-link></button>
   </div>
 </template>
 
@@ -29,7 +28,7 @@ export default {
           cardMonth:"",
           cardYear:"",
           cardVendor: "",
-          }
+          },
       }
     },
 
@@ -47,6 +46,31 @@ export default {
 </script>
 
 <style scoped>
+
+button:hover {
+    background-color:black;
+    cursor: pointer;
+}
+button:hover .routerlink {
+ color:white;
+
+}
+
+button {
+    height: 3.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    margin: 2rem 0;
+    width: 22rem;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+  color: black;
+}
 
 .card-stack {
   margin: 2rem 0 12rem;

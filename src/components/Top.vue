@@ -1,5 +1,7 @@
 <template>
-   <h1>Add Card</h1>
+<div>
+   <h1>E-WALLET</h1>
+</div>
 </template>
 
 <script>
