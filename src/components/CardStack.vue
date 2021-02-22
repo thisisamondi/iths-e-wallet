@@ -260,5 +260,7 @@ a:-webkit-any-link {
 a.cta :hover {
   background-color: #000;
 }
-
+.card:hover {
+    cursor: pointer;
+}
 </style>
